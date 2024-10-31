@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasho</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            padding: 20px;
+            background: #121212;
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            margin: 10px 0;
+            font-size: 36px;
+            color: #f0f0f0;
+            font-weight: bold;
+        }
+        h2 {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #aaaaaa;
+            font-weight: bold;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        .section-title {
+            font-size: 24px;
+            margin: 10px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .clickable {
+            color: #007bff;
+            cursor: pointer;
+            margin: 5px;
+            text-align: center;
+            display: block;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+            padding: 10px;
+        }
+        .clickable:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .back-button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .hidden-section {
+            display: none;
+        }
+        .search-bar {
+            margin: 20px;
+            padding: 15px;
+            font-size: 16px;
+            width: calc(100% - 40px);
+            max-width: 600px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="https://i.pinimg.com/736x/d3/1d/07/d31d07313f89289e06d6cae9a38d998e.jpg" alt="Logo">
+    <h1>Yasho</h1>
+    <h2 style="margin-top: -10px;">Free</h2>
+
+    <div class="social-icons">
+        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" onclick="window.open('https://www.youtube.com', '_blank')">
+        <img class="social-icon" src="https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" alt="TikTok" onclick="window.open('https://www.tiktok.com', '_blank')">
+        <img class="social-icon" src="https://art.pixilart.com/47700d2e75da.png" alt="Discord" onclick="window.open('https://discord.com', '_blank')">
+    </div>
+
+    <div id="mainSection">
+        <div class="section">
+            <div class="section-title">Minecraft</div>
+            <div class="clickable" onclick="showSection('shadersSection')">Shaders</div>
+            <div class="clickable" onclick="showSection('patchedSection')">Patched</div>
+            <div class="clickable" onclick="showSection('betterrdSection')">BetterRD</div>
+            <div class="clickable" onclick="showSection('modMenuSection')">Mod Menu</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Marketplace</div>
+            <div class="clickable" onclick="showSection('mapsSection')">Maps</div>
+            <div class="clickable" onclick="showSection('addonsSection')">Addons</div>
+            <div class="clickable" onclick="showSection('mashupsSection')">Mashups</div>
+            <div class="clickable" onclick="showSection('packsSection')">Packs</div>
+            <div class="clickable" onclick="showSection('skinsSection')">Skins</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Private</div>
+            <div class="clickable" onclick="showSection('privateAddonsSection')">Addons</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Public</div>
+            <div class="clickable" onclick="showSection('publicWorldsSection')">Worlds</div>
+            <div class="clickable" onclick="showSection('publicAddonsSection')">Addons</div>
+        </div>
+    </div>
+
+    <!-- Section templates -->
+    <div id="shadersSection" class="hidden-section">
+        <h1>Shaders</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('shadersSection', this.value)">
+        <div class="section">
+            <div class="section-title">Solar Shader v7</div>
+            <a class="clickable" href="https://lootdest.org/s?99725f13" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/585bfd762c56abf5.png" alt="Solar Shader v7" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="patchedSection" class="hidden-section">
+        <h1>Patched</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('patchedSection', this.value)">
+        <div class="section">
+            <div class="section-title">Patched Version 1.20.41</div>
+            <a class="clickable" href="https://loot-link.com/s?992554b3" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/07533a7419e959a7.jpeg" alt="Patched Version 1.20.30" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="betterrdSection" class="hidden-section">
+        <h1>BetterRD</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('betterrdSection', this.value)">
+        <div class="section">
+            <div class="section-title">BetterRD V1.2</div>
+            <a class="clickable" href="https://lootdest.org/s?3e54636f" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/58258d774eb89de0.jpeg" alt="BetterRD V1.2" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="modMenuSection" class="hidden-section">
+        <h1>Mod Menu</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('modMenuSection', this.value)">
+        <div class="section">
+            <div class="section-title">Mod Menu 1.1</div>
+            <a class="clickable" href="https://lootdest.org/s?1104f949" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/584a075514f598b8.jpeg" alt="Mod Menu 1.1" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="mapsSection" class="hidden-section">
+        <h1>Maps</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('mapsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Survival Island</div>
+            <a class="clickable" href="https://lootdest.org/s?71257e8f" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/582d0951ae3e8b43.jpeg" alt="Survival Island" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="addonsSection" class="hidden-section">
+        <h1>Addons</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('addonsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Ultimate Addon Pack</div>
+            <a class="clickable" href="https://lootdest.org/s?12345" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/5851b1f3c10e1505.jpeg" alt="Ultimate Addon Pack" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="mashupsSection" class="hidden-section">
+        <h1>Mashups</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('mashupsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Best Mashup Ever</div>
+            <a class="clickable" href="https://lootdest.org/s?54321" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/584c1a774e4b9d67.jpeg" alt="Best Mashup Ever" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="packsSection" class="hidden-section">
+        <h1>Packs</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('packsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Cool Texture Pack</div>
+            <a class="clickable" href="https://lootdest.org/s?67890" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/584d2c43daee71b1.jpeg" alt="Cool Texture Pack" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="skinsSection" class="hidden-section">
+        <h1>Skins</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('skinsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Epic Skin</div>
+            <a class="clickable" href="https://lootdest.org/s?112233" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/5852d5a0e64e1e02.jpeg" alt="Epic Skin" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="privateAddonsSection" class="hidden-section">
+        <h1>Private Addons</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('privateAddonsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Secret Addon</div>
+            <a class="clickable" href="https://lootdest.org/s?998877" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/5852e063d2d4f2e2.jpeg" alt="Secret Addon" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="publicWorldsSection" class="hidden-section">
+        <h1>Public Worlds</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('publicWorldsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Open World</div>
+            <a class="clickable" href="https://lootdest.org/s?554433" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/5852e11234e79e3a.jpeg" alt="Open World" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div id="publicAddonsSection" class="hidden-section">
+        <h1>Public Addons</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('publicAddonsSection', this.value)">
+        <div class="section">
+            <div class="section-title">Free Addon</div>
+            <a class="clickable" href="https://lootdest.org/s?998844" target="_blank">Download</a>
+            <img src="https://d1wzdj81h1hubn.cloudfront.net/resources/5852e11234e79e3a.jpeg" alt="Free Addon" style="width:100%; height:auto; border-radius: 5px;">
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        const gifs = [
+            "https://i.pinimg.com/originals/4e/98/51/4e9851eedd0e229bf4a9fb4c85207b93.gif",
+            "https://i.pinimg.com/originals/b9/08/86/b90886beff7a7664af28e02792674ce7.gif",
+            "https://i.pinimg.com/originals/81/c6/e7/81c6e7620ba9ad8cdf624e4f4c3be9fe.gif",
+            "https://i.pinimg.com/originals/f7/19/65/f71965732082901a89adedcde2051bd7.gif",
+            "https://i.pinimg.com/originals/90/1c/e7/901ce730e78500b2090809d50b99ca8f.gif",
+            "https://i.pinimg.com/originals/e4/88/3a/e4883a5aeb51b2119bd17fe00889c866.gif",
+            "https://i.pinimg.com/originals/23/e0/47/23e047b4e27c908146fef1cdeaddad3a.gif",
+            "https://i.pinimg.com/originals/8a/34/3e/8a343ea387b21d843715d0a3a86059ed.gif",
+            "https://i.pinimg.com/originals/1c/36/87/1c36870979d4001daa4f475164c1c203.gif",
+            "https://i.pinimg.com/originals/f6/5f/15/f65f15f446f36b0ca9173dca13135597.gif",
+            "https://i.pinimg.com/originals/46/88/f5/4688f5b5bc70e4fa5ad0206eb339485d.gif",
+            "https://i.pinimg.com/originals/0b/5c/45/0b5c4527f36ab687c0c89612fb06d7da.gif",
+            "https://i.pinimg.com/originals/88/8d/5d/888d5dbfdfcb42dc0865bcbfb4406fe1.gif",
+            "https://i.pinimg.com/originals/46/e4/81/46e481ade81b2be4c7674d3ccd6f25ef.gif",
+            "https://i.pinimg.com/originals/ba/b4/e7/bab4e7511a137858b89d9b7dcc0de97a.gif",
+            "https://i.pinimg.com/originals/8e/d6/8c/8ed68cb0e0257aef072b8431648b4e81.gif"
+        ];
+
+        // Function to set a random background GIF
+        function setRandomBackground() {
+            const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+            document.body.style.backgroundImage = `url(${randomGif})`;
+        }
+
+        // Call the function on page load
+        window.onload = setRandomBackground;
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.hidden-section');
+            sections.forEach(section => section.style.display = 'none');
+    
+            const targetSection = document.getElementById(sectionId);
+            targetSection.style.display = 'block';
+    
+    // Scroll to the target section
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function goBack() {
+            const sections = document.querySelectorAll('.hidden-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('mainSection').style.display = 'block';
+            // Scroll back to the main section
+            document.getElementById('mainSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterContent(sectionId, query) {
+            const section = document.getElementById(sectionId);
+            const items = section.getElementsByClassName('section-title');
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i].parentElement;
+                item.style.display = items[i].textContent.toLowerCase().includes(query.toLowerCase()) ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>
