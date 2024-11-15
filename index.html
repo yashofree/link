@@ -38,7 +38,7 @@
         .section {
             margin-top: 30px;
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             border: 1px solid #333;
             border-radius: 8px;
             overflow: hidden;
@@ -111,9 +111,29 @@
         .social-icon:hover {
             transform: scale(1.1); /* Optional: Scale effect on hover */
         }
+        .global-search-bar {
+            margin: 10px auto 20px auto; /* Place above the logo */
+            padding: 10px;
+            font-size: 14px; /* Smaller font size */
+            width: 80%; /* Smaller width for a compact feel */
+            max-width: 300px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .global-search-bar::placeholder {
+            color: #888888; /* Placeholder color */
+        }
     </style>
 </head>
 <body>
+    <input 
+        type="text" 
+        class="global-search-bar" 
+        placeholder="Global Search..." 
+        onkeyup="globalSearch(this.value)">
+    
     <img class="logo" src="https://i.pinimg.com/736x/d3/1d/07/d31d07313f89289e06d6cae9a38d998e.jpg" alt="Logo"> <!-- Replace with your logo URL -->
     <h1>Yasho</h1>
     <h2 style="margin-top: -10px;">Free</h2> <!-- Moved closer to the title -->
@@ -4275,6 +4295,23 @@
     </div>
 
     <script>
+	    function globalSearch(query) {
+            const sections = document.querySelectorAll('.section, .hidden-section');
+            query = query.toLowerCase();
+
+            sections.forEach(section => {
+            const titles = section.querySelectorAll('.section-title, .clickable');
+            let matches = false;
+
+            titles.forEach(title => {
+                if (title.textContent.toLowerCase().includes(query)) {
+                    matches = true;
+                }
+            });
+
+            section.style.display = matches ? 'block' : 'none';
+        });
+        }
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.hidden-section');
             sections.forEach(section => {
