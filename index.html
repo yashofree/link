@@ -150,7 +150,7 @@
             <div class="clickable" onclick="showSection('shadersSection')">Shaders</div>
             <div class="clickable" onclick="showSection('patchedSection')">Patched</div>
             <div class="clickable" onclick="showSection('betterrdSection')">BetterRD</div>
-            <div class="clickable" onclick="showSection('modMenuSection')">Mod Menu</div>
+            <div class="clickable" onclick="showSection('clientsSection')">Clients</div>
         </div>
 
         <div class="section">
@@ -171,7 +171,7 @@
             <div class="section-title">Public</div>
             <div class="clickable" onclick="showSection('publicWorldsSection')">Worlds</div>
             <div class="clickable" onclick="showSection('publicAddonsSection')">Addons</div>
-			<div class="clickable" onclick="showSection('publicPacksSection')">Packs</div>
+	    <div class="clickable" onclick="showSection('publicPacksSection')">Packs</div>
         </div>
     </div>
 
@@ -269,29 +269,9 @@
         <button class="back-button" onclick="goBack()">Back</button>
     </div>
 
-    <div id="modMenuSection" class="hidden-section">
-        <h1>Mod Menu</h1>
-        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('modMenuSection', this.value)">
-        <div class="section">
-            <div class="section-title">Name</div>
-            <a class="clickable" href="Link" target="_blank">Download</a>
-            <img src="Picture" alt="Yasho" style="width:100%; height:auto; border-radius: 5px;">
-        </div>
-        <div class="section">
-            <div class="section-title">Name</div>
-            <a class="clickable" href="Link" target="_blank">Download</a>
-            <img src="Picture" alt="Yasho" style="width:100%; height:auto; border-radius: 5px;">
-        </div>
-        <div class="section">
-            <div class="section-title">Name</div>
-            <a class="clickable" href="Link" target="_blank">Download</a>
-            <img src="Picture" alt="Yasho" style="width:100%; height:auto; border-radius: 5px;">
-        </div>
-        <div class="section">
-            <div class="section-title">Name</div>
-            <a class="clickable" href="Link" target="_blank">Download</a>
-            <img src="Picture" alt="Yasho" style="width:100%; height:auto; border-radius: 5px;">
-        </div>
+    <div id="clientsSection" class="hidden-section">
+        <h1>Clients</h1>
+        <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterContent('clientsSection', this.value)">
         <div class="section">
             <div class="section-title">Atlas Client 1.21.30</div>
             <a class="clickable" href="https://lootdest.org/s?5b3b1150" target="_blank">Download</a>
