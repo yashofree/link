@@ -249,7 +249,7 @@
             }
         }
 
-        const numCircles = 70;
+        const numCircles = window.innerWidth <= 768 ? 30 : 70; // Adjust number of circles based on screen width
         const circlesContainer = document.querySelector('.circles');
 
         for (let i = 0; i < numCircles; i++) {
