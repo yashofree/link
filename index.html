@@ -195,19 +195,7 @@
             transition: transform 0.3s ease;
         }
         
-        @media (max-width: 500px) {
-            .section-content {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 36px;
-            }
-            
-            .marketplace-section {
-                width: 80%;
-            }
-        }
+        /* Removed the media query that was changing layout on mobile */
         
         .glow-effect {
             position: absolute;
@@ -228,6 +216,17 @@
                 background-position: 200% 50%;
             }
         }
+        
+        /* New styles to ensure consistent experience across devices */
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 42px; /* Kept the same as desktop */
+            }
+            
+            .marketplace-section {
+                width: 70%; /* Kept the same as desktop */
+            }
+        }
     </style>
 </head>
 <body>
@@ -245,7 +244,7 @@
     
     <div class="container">
         <div class="section">
-            <div class="section-title">Minecraft</div>
+            <div class="section-title">🎮 Minecraft</div>
             <div class="glow-effect"></div>
             <div class="section-content">
                 <div class="button" onclick="window.location.href = 'https://mcbemap.github.io/dl/'")"><span class="emoji">🗺️</span> Maps</div>
