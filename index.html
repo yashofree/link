@@ -94,7 +94,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 500px;
+            max-width: 400px; /* Reduced from 500px to make the box narrower */
             gap: 25px;
             align-items: center;
         }
@@ -114,11 +114,6 @@
             box-shadow: var(--hover-glow);
         }
         
-        .marketplace-section {
-            width: 70%;
-            max-width: 250px;
-        }
-        
         .section-title {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -134,10 +129,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             padding: 5px;
-        }
-        
-        .section-content.marketplace {
-            grid-template-columns: 1fr;
         }
         
         .button {
@@ -187,15 +178,12 @@
         
         .marketplace-button {
             font-size: 18px;
-            padding: 15px;
         }
         
         .emoji {
             font-size: 1.2em;
             transition: transform 0.3s ease;
         }
-        
-        /* Removed the media query that was changing layout on mobile */
         
         .glow-effect {
             position: absolute;
@@ -217,14 +205,10 @@
             }
         }
         
-        /* New styles to ensure consistent experience across devices */
+        /* Ensure consistent experience across devices */
         @media (max-width: 500px) {
             h1 {
-                font-size: 42px; /* Kept the same as desktop */
-            }
-            
-            .marketplace-section {
-                width: 70%; /* Kept the same as desktop */
+                font-size: 42px;
             }
         }
     </style>
@@ -247,18 +231,13 @@
             <div class="section-title">🎮 Minecraft</div>
             <div class="glow-effect"></div>
             <div class="section-content">
-                <div class="button" onclick="window.location.href = 'https://mcbemap.github.io/dl/'")"><span class="emoji">🗺️</span> Maps</div>
+                <div class="button" onclick="window.location.href = 'https://mcbemap.github.io/dl/'"><span class="emoji">🗺️</span> Maps</div>
                 <div class="button" onclick="window.location.href = 'https://mcbeaddon.github.io/dl/'"><span class="emoji">🧩</span> Addons</div>
                 <div class="button" onclick="window.location.href = 'https://mcbeshader.github.io/dl/'"><span class="emoji">✨</span> Shaders</div>
                 <div class="button" onclick="window.location.href = 'https://mcbeclient.github.io/dl/'"><span class="emoji">🖥️</span> Clients</div>
                 <div class="button" onclick="window.location.href = 'https://mcbepack.github.io/dl/'"><span class="emoji">📦</span> Packs</div>
                 <div class="button" onclick="window.location.href = 'https://mcbeskin.github.io/dl/'"><span class="emoji">👕</span> Skins</div>
-            </div>
-        </div>
-        
-        <div class="section marketplace-section">
-            <div class="glow-effect"></div>
-            <div class="section-content marketplace">
+                <div class="button" onclick="window.location.href = 'https://mcbemodpack.github.io/dl/'"><span class="emoji">🐉</span> ModPacks</div>
                 <div class="button marketplace-button" onclick="window.location.href = 'https://craftydlc.github.io/v2/'"><span class="emoji">🛒</span> Marketplace</div>
             </div>
         </div>
