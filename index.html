@@ -72,8 +72,8 @@
         
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 10px;
+            margin: 5px 0;
         }
         
         .social-icon {
@@ -94,7 +94,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 400px; /* Reduced from 500px to make the box narrower */
+            max-width: 375px;
             gap: 25px;
             align-items: center;
         }
@@ -128,12 +128,13 @@
         .section-content {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            padding: 5px;
+            gap: 3px;
+            padding: 10px;
         }
         
         .button {
-            margin: 8px;
-            padding: 12px 10px;
+            margin: 4px;
+            padding: 10px 10px; /* Slightly shorter than the download button */
             background-color: rgba(255, 255, 255, 0.08);
             color: var(--text);
             text-align: center;
@@ -228,7 +229,7 @@
     
     <div class="container">
         <div class="section">
-            <div class="section-title">🎮 Minecraft</div>
+            <div class="section-title">🎮 Minecraft 🎮</div>
             <div class="glow-effect"></div>
             <div class="section-content">
                 <div class="button" onclick="window.location.href = 'https://mcbemap.github.io/dl/'"><span class="emoji">🗺️</span> Maps</div>
@@ -239,6 +240,9 @@
                 <div class="button" onclick="window.location.href = 'https://mcbeskin.github.io/dl/'"><span class="emoji">👕</span> Skins</div>
                 <div class="button" onclick="window.location.href = 'https://mcbemodpack.github.io/dl/'"><span class="emoji">🐉</span> ModPacks</div>
                 <div class="button marketplace-button" onclick="window.location.href = 'https://craftydlc.github.io/v2/'"><span class="emoji">🛒</span> Marketplace</div>
+                <div class="button tall" style="grid-column: span 2;" onclick="window.location.href = 'https://mcdlfree.github.io/w/'">
+                    ⬇️  Download Minecraft  ⬇️
+                </div>
             </div>
         </div>
     </div>
